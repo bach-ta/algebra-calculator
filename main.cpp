@@ -341,7 +341,7 @@ void display() {
 	cout << "3. Linear Diophantine Equations\n";
 	cout << "4. Linear Congruences\n";
 	cout << "5. Simultaneous Linear Congruences\n";
-	cout << "6. Brute Force Non-Linear Congruences\n";
+	cout << "6. Non-Linear Congruences (up to 4th degree)\n";
 	cout << "7. Addition Table for Zm\n";
 	cout << "8. Multiplication Table for Zm\n";
 	cout << '\n';
