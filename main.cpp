@@ -220,7 +220,7 @@ void lico(ll coef, ll c, ll mod) {
 		} else {
 			while (x >= step) x -= step;
 		}
-		cout << "The set of all solutions to " << coef << "x == " << c << " (mod " << mod << ") is x == ";
+		cout << "The set of all solutions to " << coef << "x ≡ " << c << " (mod " << mod << ") is x ≡ ";
 		cout << x;
 		ll y = x;
 		vector<ll> list;
@@ -232,7 +232,7 @@ void lico(ll coef, ll c, ll mod) {
 		for (int i = 0; i < list.size(); i++) cout << ", " << list[i];
 		cout << " (mod " << mod << ")\n";
 		
-		if (!list.empty()) cout << "or equivalently, " << "x == " << y << " (mod " << step << ")\n\n";
+		if (!list.empty()) cout << "or equivalently, " << "x ≡ " << y << " (mod " << step << ")\n\n";
 	}
 }
 
@@ -273,7 +273,7 @@ void simlico(ll c1, ll m1, ll c2, ll m2) {
 		} else {
 			while (sol >= step) sol -= step;
 		}
-		cout << "The set of all solutions to x == " << c1 << " (mod " << m1 << ") and " << "x == " << c2 << " (mod " << m2 << ") is x == ";
+		cout << "The set of all solutions to x ≡ " << c1 << " (mod " << m1 << ") and " << "x ≡ " << c2 << " (mod " << m2 << ") is x ≡ ";
 		cout << sol;
 		cout << " (mod " << mod << ")\n\n";
 	}
@@ -289,7 +289,7 @@ void non_lin_bf(int a4, int a3, int a2, int a1, int a0, int c, int mod) {
 		cout << "No solution\n\n";
 		return;
 	}
-	cout << "All solutions: x == ";
+	cout << "All solutions: x ≡ ";
 	for (auto x : ans) cout << x << " ";
 	cout << "(mod " << mod << ")\n\n";
 }
@@ -355,8 +355,7 @@ bool ps(long long x) {
 int main() {
 	int cont = 1;
 	ll cnt = 0;
-	cout << "----- Welcome to my Algebra Calculator -----\n";
-	cout << "Note: '==' represents the \"equivalent\" sign in modular arithmetics\n\n";
+	cout << "----- Bach Ta's Algebra Calculator -----\n\n";
 	
 	while (cont == 1) {
 		ll a, b, c;
@@ -381,13 +380,13 @@ int main() {
 			lde(a, b, c);
 		}
 		else if (ans == 4) {
-			cout << "Finding the solution to ax == c (mod m)\n";
+			cout << "Finding the solution to ax ≡ c (mod m)\n";
 			cout << "a, c, m = ?\n";
 			cin >> a >> b >> c;
 			lico(a, b, c);
 		} 
 		else if (ans == 5) {
-			cout << "Finding the solution to x == c1 (mod m1) and x == c2 (mod m2)\n";
+			cout << "Finding the solution to x ≡ c1 (mod m1) and x ≡ c2 (mod m2)\n";
 			cout << "Requires: gcd(m1, m2) = 1\n";
 			ll a1, c1, m1, a2, c2, m2;
 			cout << "c1, m1 = ?\n";
@@ -401,7 +400,7 @@ int main() {
 		} 
 		else if (ans == 6){
 			int a4, a3, a2, a1, a0, c, m;
-			cout << "Finding the solution to (a4)x^4 + (a3)x^3 + (a2)x^2 + (a1)x + a0 == c (mod m)\n";
+			cout << "Finding the solution to (a4)x^4 + (a3)x^3 + (a2)x^2 + (a1)x + a0 ≡ c (mod m)\n";
 			cout << "a4, a3, a2, a1, a0, c, m = ?\n";
 			cin >> a4 >> a3 >> a2 >> a1 >> a0 >> c >> m;
 			non_lin_bf(a4, a3, a2, a1, a0, c, m);
